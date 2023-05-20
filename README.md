@@ -36,3 +36,26 @@ Do you have your own twist on the recipe? Change up the ingredients or the steps
 **Attribution**
 
 Recipe adapted from https://www.foodista.com/recipe/MPYMQBPD/chicken-peanut-stew, which got the recipe from Marcus Samuelsson's The Soul of a New Cuisine: A Discovery of the Foods and Flavors of Africa.
+
+## Testing
+
+To check that your solution meets the criteria, run `npm run test` in the console.
+
+If your solution has all the required elements it should say something like:
+
+```txt
+ PASS  ./html-elements.test.js
+  The recipe page has the required HTML elements
+    ✓ uses at least one heading element (64 ms)
+    ✓ uses at least three heading elements (14 ms)
+    ✓ uses at least two heading elements (11 ms)
+    ✓ uses at least one image element (5 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       4 passed, 4 total
+Snapshots:   0 total
+Time:        1.288 s
+Ran all test suites.
+```
+
+If it does not pass one of the tests, you should get some feedback about what is wrong or missing in your solution.
