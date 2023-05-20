@@ -46,16 +46,23 @@ If your solution has all the required elements it should say something like:
 ```txt
  PASS  ./html-elements.test.js
   The recipe page has the required HTML elements
-    ✓ uses at least one heading element (64 ms)
-    ✓ uses at least three heading elements (14 ms)
-    ✓ uses at least two heading elements (11 ms)
+    ✓ uses at least one heading element (50 ms)
+    ✓ uses at least three heading elements (18 ms)
+    ✓ uses at least two heading elements (10 ms)
     ✓ uses at least one image element (5 ms)
+    ✓ index.html is a valid html doc (193 ms)
 
 Test Suites: 1 passed, 1 total
-Tests:       4 passed, 4 total
+Tests:       5 passed, 5 total
 Snapshots:   0 total
-Time:        1.288 s
+Time:        2.104 s
 Ran all test suites.
 ```
 
 If it does not pass one of the tests, you should get some feedback about what is wrong or missing in your solution.
+
+### Valid HTML
+
+The last test is that your HTML follows all of the recommended rules for an HTML document.
+
+[Here is a list](https://html-validate.org/rules/index.html) of all the rules that will be automatically checked. You don't have to memorize this list or check each rule yourself. Instead, if you get feedback that your HTML breaks one of the rules, you can find an explanation of the rule from that list.

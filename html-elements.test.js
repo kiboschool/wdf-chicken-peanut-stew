@@ -9,12 +9,14 @@
 const fs = require('fs');
 const path = require('path');
 const { queries } = require('@testing-library/dom');
+require("html-validate/jest");
+
+const html = fs.readFileSync(path.resolve(__dirname, './index.html'), 'utf8');
 
 jest.dontMock('fs');
 
 describe('The recipe page has the required HTML elements', () => {
   beforeAll(() => {
-    const html = fs.readFileSync(path.resolve(__dirname, './index.html'), 'utf8');
     document.documentElement.innerHTML = html.toString();
   });
 
@@ -35,4 +37,8 @@ describe('The recipe page has the required HTML elements', () => {
   test('uses at least one image element', function () {
     queries.getAllByRole(document, 'img')
   });
+
+  test('index.html is a valid html doc', function () {
+    expect(html).toHTMLValidate();
+  })
 })
