@@ -15,8 +15,8 @@ function gradingReporter(testResults) {
     "stdout_visibility": "visible",
     "tests": tests.map(test => ({
       "name": test.title,
-      "score": test.status == "passed" ? 1 : 0,
-      "max_score": 1,
+      "score": test.status == "passed" ? WEIGHTS[test.title] : 0,
+      "max_score": WEIGHTS[test.title],
       "status": test.status, 
       "name_format": "text",
       "output": test.status == "passed" ? `**PASSED: ${test.title}**` : `**FAILED: ${test.title}**\n\n ${test.ancestorTitles.join('\n')} \n\n **Errors**: ${test.failureMessages.join('\n')}`,
@@ -34,5 +34,19 @@ function gradingReporter(testResults) {
 }
 
 module.exports = gradingReporter;
-module.exports.weight = () => {}
 
+// track the weight for each test
+const WEIGHTS = {};
+WEIGHTS.__total = 0;
+
+// add a test and points
+const weight = (points, testname) => {
+  if (testname in WEIGHTS) {
+    throw new Error(`Grade-weighted tests require unique names. ${testname} has already been used`);
+  }
+  WEIGHTS[testname] = points
+  WEIGHTS.__total += points
+  return testname
+}
+
+module.exports.weight = weight

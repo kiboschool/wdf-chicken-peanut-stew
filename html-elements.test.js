@@ -10,6 +10,7 @@ const fs = require('fs');
 const path = require('path');
 const { queries } = require('@testing-library/dom');
 require("html-validate/jest");
+const w = require('./gradescope/jest-autograding-reporter').weight
 
 const html = fs.readFileSync(path.resolve(__dirname, './index.html'), 'utf8');
 
@@ -20,25 +21,25 @@ describe('The recipe page has the required HTML elements', () => {
     document.documentElement.innerHTML = html.toString();
   });
 
-  test('uses at least one heading element', function () {
+  test(w(5, 'uses at least one heading element'), function () {
     queries.getAllByRole(document, 'heading')
   });
 
-  test('uses at least three heading elements', function () {
+  test(w(2, 'uses at least three heading elements'), function () {
     let headings = queries.getAllByRole(document, 'heading')
     expect(headings.length).toBeGreaterThanOrEqual(3)
   });
 
-  test('uses at least two heading elements', function () {
+  test(w(3, 'uses at least two list elements'), function () {
     let lists = queries.getAllByRole(document, 'list')
     expect(lists.length).toBeGreaterThanOrEqual(2)
   });
 
-  test('uses at least one image element', function () {
+  test(w(1, 'uses at least one image element'), function () {
     queries.getAllByRole(document, 'img')
   });
 
-  test('index.html is a valid html doc', function () {
+  test(w(1, 'index.html is a valid html doc'), function () {
     expect(html).toHTMLValidate();
   })
 })
