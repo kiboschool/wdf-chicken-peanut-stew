@@ -39,7 +39,7 @@ Recipe adapted from https://www.foodista.com/recipe/MPYMQBPD/chicken-peanut-stew
 
 ## Testing
 
-To check that your solution meets the criteria, run `npm run test` in the console.
+To check that your solution meets the criteria, run `npm run test` in the console. (If you haven't already, you'll need to run `npm install` to install the packages required for testing).
 
 If your solution has all the required elements it should say something like:
 
