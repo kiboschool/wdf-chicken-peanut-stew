@@ -10,7 +10,7 @@ const fs = require('fs');
 const path = require('path');
 const { queries } = require('@testing-library/dom');
 require("html-validate/jest");
-const w = require('./jest-autograding-reporter').weight
+const w = require('jest-autograding-reporter').weight
 
 const html = fs.readFileSync(path.resolve(__dirname, './index.html'), 'utf8');
 
