@@ -1,6 +1,6 @@
 module.exports = {
-  // Stop running tests after `1` failure
-  bail: 1,
+  // Run all the tests
+  bail: false,
   testEnvironment: "jsdom",
   globalTeardown: "jest-autograding-reporter/teardown.js",
 

@@ -6,7 +6,7 @@ Autograding output for javascript projects is a bit tricky, since it uses a cust
 
 ## Writing tests for Gradescope
 
-0. Write a solution
+0. Write a solution (on the `solution` branch)
 1. Write jest tests that the solution passes
 2. Import the [custom reporter](https://github.com/kiboschool/jest-autograding-reporter) and add weights to the tests
 
@@ -19,7 +19,8 @@ test(w(3, 'sums to eleven'), function () {
 })
 ```
 
-3. Double-check that the tests still pass, and that the tests don't specify anything that isn't in the instructions in the student-facing README.
+3. Double-check that the tests still pass, and that the tests don't specify anything that isn't in the instructions in the student-facing README. Add a note about testing to the README.
+4. Copy your tests and any setup from the solution branch to the `main` branch. `git switch main; git checkout solution *.test.js jest.config.js package.json package-lock.json`. Check that your tests fail properly with the starter code.
 
 Note: jest and the custom reporter need some config. A good starting point is to just copy package.json and jest.config.js from a working repo and then modify it if needed.
 
