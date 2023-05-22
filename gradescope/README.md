@@ -8,10 +8,10 @@ Autograding output for javascript projects is a bit tricky, since it uses a cust
 
 0. Write a solution
 1. Write jest tests that the solution passes
-2. Import the custom reporter and add weights to the tests
+2. Import the [custom reporter](https://github.com/kiboschool/jest-autograding-reporter) and add weights to the tests
 
 ```js
-const w = require('./jest-autograding-reporter').weight
+const w = require('jest-autograding-reporter').weight
 
 // this test counts for 3 points
 test(w(3, 'sums to eleven'), function () {
@@ -20,6 +20,8 @@ test(w(3, 'sums to eleven'), function () {
 ```
 
 3. Double-check that the tests still pass, and that the tests don't specify anything that isn't in the instructions in the student-facing README.
+
+Note: jest and the custom reporter need some config. A good starting point is to just copy package.json and jest.config.js from a working repo and then modify it if needed.
 
 ## Autograder config steps
 
