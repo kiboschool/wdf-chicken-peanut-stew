@@ -3,7 +3,7 @@
     "@testing-library/dom": "^9.3.0",
     "html-validate": "^7.17.0",
     "jest": "^29.5.0",
-    "jest-autograding-reporter": "^0.1.7",
+    "jest-autograding-reporter": "^0.1.8",
     "jest-environment-jsdom": "^29.5.0"
   },
   "scripts": {
