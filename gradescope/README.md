@@ -11,8 +11,9 @@ Autograding output for javascript projects is a bit tricky, since it uses a cust
 2. Import the custom reporter and add weights to the tests
 
 ```js
-const w = require('./gradescope/jest-autograding-reporter').weight
+const w = require('./jest-autograding-reporter').weight
 
+// this test counts for 3 points
 test(w(3, 'sums to eleven'), function () {
   expect(1 + 2 + 4 + 4).toEqual(11)
 })
@@ -26,6 +27,7 @@ test(w(3, 'sums to eleven'), function () {
 2. `cd gradescope; ./make_zip.sh; cd ..`
 3. Upload `gradescope.zip` to the autograder, and check that it builds correctly
 4. Zip and upload the solution (`zip -r solution.zip ./*`) as a submission for a test student, to check that everything is working as expected. You can use the 'Test Autograder' button or click through to Manage Submissions -> Upload Submission.
+5. Check that the Autograder Points for the assignment are the same as the total points of the weights in the tests.
 
 Don't commit the zip files, you can just remove them.
 
