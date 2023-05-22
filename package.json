@@ -7,6 +7,6 @@
   },
   "scripts": {
     "test": "jest",
-    "grade": "jest --bail=0 --testResultsProcessor ./gradescope/jest-autograding-reporter"
+    "grade": "jest --bail=0 --testResultsProcessor ./jest-autograding-reporter"
   }
 }

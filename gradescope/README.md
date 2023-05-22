@@ -10,10 +10,10 @@ Autograding output for javascript projects is a bit tricky, since it uses a cust
 1. Write jest tests that the solution passes
 2. Import the custom reporter and add weights to the tests
 
-```
-const { weight } = require('jest-autograding-reporter')
+```js
+const w = require('./gradescope/jest-autograding-reporter').weight
 
-test('sums to eleven', function () {
+test(w(3, 'sums to eleven'), function () {
   expect(1 + 2 + 4 + 4).toEqual(11)
 })
 ```
@@ -23,7 +23,7 @@ test('sums to eleven', function () {
 ## Autograder config steps
 
 1. Be sure that project dependencies are added to `package.json`
-2. `cd gradescope; ./make_zip.sh`
+2. `cd gradescope; ./make_zip.sh; cd ..`
 3. Upload `gradescope.zip` to the autograder, and check that it builds correctly
 4. Zip and upload the solution (`zip -r solution.zip ./*`) as a submission for a test student, to check that everything is working as expected. You can use the 'Test Autograder' button or click through to Manage Submissions -> Upload Submission.
 

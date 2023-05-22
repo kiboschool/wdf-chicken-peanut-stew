@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
 # copy test file
-cp ../test_*.py ./
+cp ../*.test.js ./
+# copy package.json
+cp ../package.json ./
+cp -r ../jest-autograding-reporter ./
 
-zip -r gradescope.zip setup.sh requirements.txt run_autograder run_tests.py test_*.py
+zip -r gradescope.zip setup.sh run_autograder package.json *.test.js jest-autograding-reporter/*
 
 # remove test file
-rm ./test_*.py
+rm ./*.test.js
+rm package.json
+rm -r jest-autograding-reporter

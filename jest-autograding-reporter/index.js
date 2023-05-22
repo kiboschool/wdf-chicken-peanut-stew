@@ -87,5 +87,4 @@ function gradingReporter(testResults) {
 }
 
 module.exports = gradingReporter;
-
 module.exports.weight = weight
